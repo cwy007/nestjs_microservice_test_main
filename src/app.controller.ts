@@ -20,5 +20,6 @@ export class AppController {
 
     this.userClient.emit('log', '求和操作被调用了');
     return this.userClient.send('sum', numArr);
+    // return this.userClient.send({ cmd: 'sum' }, numArr);
   }
 }
