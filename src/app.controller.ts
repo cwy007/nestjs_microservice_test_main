@@ -17,6 +17,8 @@ export class AppController {
   @Get('sum')
   sum(@Query('num') num: string) {
     const numArr = num.split(',').map(Number);
+
+    this.userClient.emit('log', '求和操作被调用了');
     return this.userClient.send('sum', numArr);
   }
 }
